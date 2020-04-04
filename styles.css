@@ -1,0 +1,48 @@
+.content {
+    margin: 7% 10%;
+    border: 3px solid black;
+    border-radius: 10px;
+    min-height: 400px;
+}
+
+.list {
+    min-height: 300px;
+}
+
+.list-brace {
+    height: 300px;
+}
+
+.list-title {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.bd-right {
+    border-right: 1px dashed black;
+    padding: 5px;
+}
+
+.bd-top {
+    border-top: 1px dashed black;
+    padding: 5px;
+}
+
+.bd-bottom {
+    border-bottom: 1px dashed black;
+    padding: 5px;
+}
+
+input {
+    max-height: 30px;
+}
+
+span {
+    font-size: 24px;
+}
+
+ul,
+input {
+    margin: 0;
+    padding: 0;
+}
