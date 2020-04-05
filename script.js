@@ -51,7 +51,7 @@ function add_replacement(p, q, flag) {
     $("#list-rep").append('<li id="' + liId + '">' + p + "&rightarrow; " + end_string + q + " " + "</li>");
     return liId;
 }
-$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+$('[data-toggle="tooltip"]').tooltip();
 $('#navModal').popover({
     html: true,
     placement: 'bottom',
@@ -80,23 +80,26 @@ $('#btn-append').on("click", function() {
                 css: {
                     margin: '2px'
                 },
+                attr: {
+                    'data-toggle': 'tooltip'
+                },
                 title: 'Изменить',
                 on: {
-                    click: function(event) {
+                    click: function() {
                         if ($(this).parent().has('div').length == 0) {
                             $('<div/>', {
                                 html: `<div class="col-5">
-                        <input type='text' id='P-append' class="form-control" title="Подтрока поиска"> 
+                        <input type='text' id='P-append' class="form-control" title="Подтрока поиска" data-toggle="tooltip"> 
                         </div>
                     <div>
                         &rightarrow;
                     </div>
-                    <input type="checkbox" id="flag-append" title="Флаг конечной подстановки">
+                    <input type="checkbox" id="flag-append" title="Флаг конечной подстановки" data-toggle="tooltip">
                     <div class="col-5">
-                        <input type="text" id="Q-append" class="form-control" title="Подтрока замены">
+                        <input type="text" id="Q-append" class="form-control" title="Подтрока замены" data-toggle="tooltip">
                     </div>
                     
-                    <div title="Сохранить" id="btn-save">
+                    <div id="btn-save">
                         <svg class="bi bi-check-box" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3-3a.5.5 0 11.708-.708L8 9.293l6.646-6.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
                             <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 003 14.5h10a1.5 1.5 0 001.5-1.5V8a.5.5 0 00-1 0v5a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V3a.5.5 0 01.5-.5h8a.5.5 0 000-1H3A1.5 1.5 0 001.5 3v10z" clip-rule="evenodd"/>
@@ -105,6 +108,7 @@ $('#btn-append').on("click", function() {
                     `,
                                 class: 'row'
                             }).appendTo($(this).parent())
+                            $('[data-toggle="tooltip"]').tooltip();
                             $("#btn-save").on('click', function() {
                                 let p_app = $('#P-append').val(),
                                     q_app = $('#Q-append').val(),
@@ -129,6 +133,9 @@ $('#btn-append').on("click", function() {
                 css: {
                     margin: '2px'
                 },
+                attr: {
+                    'data-toggle': 'tooltip'
+                },
                 title: "Удалить",
                 on: {
                     click: function(event) {
@@ -139,6 +146,7 @@ $('#btn-append').on("click", function() {
                 }
             })
             .appendTo(this);
+        $('[data-toggle="tooltip"]').tooltip();
     }, function() {
         $('li span').remove();
     })
