@@ -27,7 +27,7 @@
                             </svg>
                         </div>
                         <div class="col-10">
-                            <ul id="list-rep" style="list-style-type: none;"></ul>
+                            <ul id="list-rep"></ul>
                         </div>
                     </div>
                     <div class="row bd-top">
@@ -62,8 +62,8 @@
                                 </svg>
                             </span>
                             <span id="settings" data-toggle="tooltip" title="настройки">
-                                 <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 014.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 018.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
                                         clip-rule="evenodd" />
@@ -86,15 +86,15 @@
             </div>
         </div>
     </div>
-    //TODO move to another html
+    <!--TODO move to another html-->
     <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="settingsModalLabel">Настройки</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -106,7 +106,116 @@
             </div>
         </div>
     </div>
+    <!--TODO move to another html-->
+    <div class="modal fade bd-example-modal-lg" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalTitle">Справка</h5>
+                    <button type="button" id="navModal" class="close" data-toggle="popover">
+                        <span aria-hidden="true">
+                            <svg class="bi bi-justify" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M2 12.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="definitions">Определения</h3>
+                    <h4>Основные определения</h4>
+                    <p><strong>Алфавит</strong> &Sigma; - конечное множество символов.</p>
+                    <p><strong>Слово</strong> - цепочка символов из алфавита &Sigma;, &Sigma;* - множество всех слов, &epsilon; - пустое слово. </p>
+                    <p><strong>Язык</strong>- любое подмножество множества слов T &sube; &Sigma;*.</p>
+                    <p><strong>Конкатенация</strong> слов P и Q - слово PQ, в начале которого все буквы P, а потом все буквы Q.</p>
+                    <p>Слово P - <strong>подслово</strong> Q, если это слово Q является конкатенацией слов: Q = XPY, где X, Y - конечные, возможно пустые, слова; при этом X - префикс, Y - суффикс.
+                        <br>Префикс и суффикс могут быть определены неоднозначно. Любое слово является своим подсловом при X,Y = &epsilon;. Q - надслово для P. </p>
+                    <p><strong>Вхождение</strong> подслова P в слово Q называется <strong>первым</strong>, если P не является подсловом префикса.</p>
+                    <h4>Марковские подстановки</h4>
+                    <p>Выражение вида P &rightarrow; Q - <strong>марковская подстановка</strong>, где P, Q - возможно пустые слова.</p>
+                    <p>Марковская подстановка <strong>применима</strong> к слову M, если P является подсловом M.</p>
+                    <p><strong>Результат применения подстановки</strong> к слову M - слово M*, полученное из заменой M первого вхождения P на Q. Если в подстановке P=&epsilon;, это соотвествует добалению Q в начало слова, т.е. M*=QM. Если Q=&epsilon;, это
+                        соотвествует удалению первого вхождения P. Подстановка вида P &rightarrow;. Q-
+                        <strong>заключительная</strong> или <strong>финальная.</strong></p>
+                    <h4>Схемы нормальных алгоритмов</h4>
+                    <p> <strong>Схема нормального алгоритма</strong> - конечная упорядоченная последовательность марковских подстановок, среди которых могут быть и заключительные подстановки, т.е. &lbrace;
+                        <ul>
+                            <li>P1 &rightarrow; &lt; . &gt; Q1 </li>
+                            <li>P2 &rightarrow; &lt; . &gt; Q2 </li>
+                            <li>... </li>
+                            <li>Pn &rightarrow; &lt; . &gt; Qn </li>
+                        </ul>
+                    </p>
+                    <p><strong>Однократное применение схемы нормального алгоритма</strong> - применение первой по порядку следования подстановки, применимой к данному слову. Если не найдется ни дной подстановки, применимой к слову, схема не применима к слову.</p>
+                    <p><strong>Нормальный алгоритм</strong> - последовательность однократных применений схемы нормального алгоритма, которая заканчивается в одном из следующих случаев: 1) не находится применимых подстановок или 2) использовалась заключительная.</p>
+                    <h4>Построение схем нормальных алгоритмов</h4>
+                    <p>Реализация нормального алгоритма может требовать дополнительных(вспомогательных) символов. &Sigma;' - <strong>расширение</strong> &Sigma;, если &Sigma; &sub; &Sigma;'.
+                    </p>
+                    <p>Нормальный алгоритм действует <strong>над</strong> алфавитом &Sigma;, если в схеме нормального алгоритма используются слова расширения алфавита &Sigma;. Но входные слова и результат применения алгоритма состоят только из символов алфавита.
+                        Если в схеме отсутствуют вспомогательные символы, то нормальный алгоритм действует
+                        <strong>в</strong> алфавите.
+                    </p>
+                    <p>Результат применения схемы нормального алгоритма можно рассматривать как результат вычисления.
+                        <br> Функция f: Y &rightarrow; &Sigma;*, Y &sube; &Sigma;* (действующая на множестве ) -
+                        <strong>нормально вычислима</strong>, если существует схема нормального алгоритма над алфавитом &Sigma;, которая каждое входное слово из области определения функции f преобразует в слово f(P), где P - входное слово. Если алгоритм
+                        не завершается - это соотвествует неопределенности функции f на этом слове.
+                    </p>
+                    <h4 id="examples">Примеры</h4>
+                    <div class="row">
+                        <div class="col-4">
+                            <p>Вычисление частного при делении на 2 в виде: частное#остаток(для &Sigma; = {1, #}) &lbrace;</p>
+                            <ul>
 
+                                <li>*11 &rightarrow; 1*</li>
+                                <li>*1 &rightarrow; .#1</li>
+                                <li>* &rightarrow; .#</li>
+                                <li> &rightarrow; *</li>
+                            </ul>
+                            <button type="button" id="try-it1" class="btn btn-dark" data-dismiss="modal">Попробовать</button>
+                        </div>
+                        <div class="col-4">
+                            <p>Добавление всех символов входного слова(для &Sigma; = {a, b}) &lbrace;</p>
+                            <ul>
+                                <li>*a &rightarrow; aa*</li>
+                                <li>*b &rightarrow; bb*</li>
+                                <li>* &rightarrow; .</li>
+                                <li> &rightarrow; *</li>
+                            </ul>
+                            <button type="button" id="try-it2" class="btn btn-dark" data-dismiss="modal">Попробовать</button>
+                        </div>
+                        <div class="col-4">
+                            <p>Перестановка символов входного слова в обратном порядке(для &Sigma; = {a, b}) &lbrace;</p>
+                            <ul>
+
+                                <li>*a &rightarrow; a*</li>
+                                <li>*b &rightarrow; b*</li>
+                                <li>#ab &rightarrow; b#a</li>
+                                <li>#ba &rightarrow; a#b</li>
+                                <li>#a &rightarrow; a#</li>
+                                <li>#b &rightarrow; b#</li>
+                                <li>#a* &rightarrow; |*a</li>
+                                <li>#b* &rightarrow; |*b</li>
+                                <li>a| &rightarrow; |a</li>
+                                <li>b| &rightarrow; |b</li>
+                                <li>| &rightarrow; #</li>
+                                <li>#* &rightarrow; .</li>
+                                <li> &rightarrow; #*</li>
+                            </ul>
+                            <button type="button" id="try-it3" class="btn btn-dark" data-dismiss="modal">Попробовать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Понятно!</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

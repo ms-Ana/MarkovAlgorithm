@@ -1,3 +1,6 @@
+let replacement = []
+let liNum = 0;
+
 function make_replacement(a, b, fl) {
     return {
         a,
@@ -32,10 +35,34 @@ function make_replace(str) {
     res_string += str;
     return res_string;
 }
+
+function clear_rep() {
+    replacement = []
+    liNum = 0
+    $("#list-rep").empty();
+}
+
+function add_replacement(p, q, flag) {
+    replacement.push(make_replacement(p, q, flag));
+    let end_string = "";
+    if (flag)
+        end_string = ".";
+    let liId = 'li-' + liNum++;
+    $("#list-rep").append('<li id="' + liId + '">' + p + "&rightarrow; " + end_string + q + " " + "</li>");
+    return liId;
+}
 $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+$('#navModal').popover({
+    html: true,
+    placement: 'bottom',
+    title: 'Навигация',
+    content: function() {
+        return "<ul><li><a href='#definitions'>Определения</a></li><a href='#examples'>Примеры</a></li></ul>";
+    }
+});
 $("#settings").on("click", function() { $("#settingsModal").modal(); });
-let replacement = []
-let liNum = 0;
+$("#information").on("click", function() { $("#infoModal").modal(); });
+
 
 $('#btn-append').on("click", function() {
     let p = $('#P').val().trim();
@@ -43,13 +70,7 @@ $('#btn-append').on("click", function() {
     let q = $('#Q').val().trim();
     $('#Q').val(" ");
     let end = $('#flag').prop('checked');
-    replacement.push(make_replacement(p, q, end));
-    let end_string = "";
-    if (end)
-        end_string = ".";
-    let liId = 'li-' + liNum++;
-    $("#list-rep").append('<li id="' + liId + '">' + p + "&rightarrow; " + end_string + q + " " + "</li>");
-
+    let liId = add_replacement(p, q, end);
     $('#' + liId).hover(function() {
         $('<span>', {
                 html: `<svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -128,15 +149,42 @@ $("#maxIter").on('input', function() {
     $("#showIters").html($(this).val());
     max_iter = $(this).val();
 });
-$("#showIters").html(max_iter);
+
 
 
 
 $("#btn-act").on("click", function() {
-    $('#answer').html(make_replace($('#string').val()));
+    $('#answer').html(make_replace($('#string').val().trim()));
     $('#string').val(" ");
 })
-$("#btn-removeAll").on('click', function() {
-    replacement = []
-    $("#list-rep").empty();
+$("#btn-removeAll").on('click', clear_rep)
+$("#try-it1").on('click', function() {
+    clear_rep();
+    add_replacement('*11', '1*', false);
+    add_replacement('*1', '#1', true);
+    add_replacement('*', '#', true);
+    add_replacement('', '*', false);
+})
+$("#try-it2").on('click', function() {
+    clear_rep();
+    add_replacement('*a', 'aa*', false);
+    add_replacement('*b', 'bb*', false);
+    add_replacement('*', '', true);
+    add_replacement('', '*', false);
+})
+$("#try-it3").on('click', function() {
+    clear_rep();
+    add_replacement('*a', 'a*', false);
+    add_replacement('*b', 'b*', false);
+    add_replacement('#ab', 'b#a', false);
+    add_replacement('#ba', 'a#b', false);
+    add_replacement('#a', 'a#', false);
+    add_replacement('#b', 'b#', false);
+    add_replacement('#a*', '|*a', false);
+    add_replacement('#b*', '|*b', false);
+    add_replacement('a|', '|a', false);
+    add_replacement('b|', '|b', false);
+    add_replacement('|', '#', false);
+    add_replacement('#*', '', true);
+    add_replacement('', '#*', false);
 })
