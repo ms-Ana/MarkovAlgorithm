@@ -57,7 +57,7 @@ $('#navModal').popover({
     placement: 'bottom',
     title: 'Навигация',
     content: function() {
-        return "<ul><li><a href='#definitions'>Определения</a></li><a href='#examples'>Примеры</a></li></ul>";
+        return "<ul><li><a href='#definitions'>Определения</a></li><a href='#examples'>Примеры</a></li><li><a href='#manual'>Как пользоваться</a></li></ul>";
     }
 });
 $("#settings").on("click", function() { $("#settingsModal").modal(); });
@@ -152,7 +152,7 @@ $('#btn-append').on("click", function() {
     })
 });
 
-let max_iter = 2000;
+let max_iter = 1000;
 $("#maxIter").on('input', function() {
     $("#showIters").html($(this).val());
     max_iter = $(this).val();
