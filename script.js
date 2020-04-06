@@ -152,7 +152,7 @@ $('#btn-append').on("click", function() {
     })
 });
 
-let max_iter = 1000;
+let max_iter = 2000;
 $("#maxIter").on('input', function() {
     $("#showIters").html($(this).val());
     max_iter = $(this).val();
@@ -182,17 +182,7 @@ $("#try-it2").on('click', function() {
 })
 $("#try-it3").on('click', function() {
     clear_rep();
-    add_replacement('*a', 'a*', false);
-    add_replacement('*b', 'b*', false);
-    add_replacement('#ab', 'b#a', false);
-    add_replacement('#ba', 'a#b', false);
-    add_replacement('#a', 'a#', false);
-    add_replacement('#b', 'b#', false);
-    add_replacement('#a*', '|*a', false);
-    add_replacement('#b*', '|*b', false);
-    add_replacement('a|', '|a', false);
-    add_replacement('b|', '|b', false);
-    add_replacement('|', '#', false);
-    add_replacement('#*', '', true);
-    add_replacement('', '#*', false);
+    add_replacement('cb', 'bc', false);
+    add_replacement('ca', 'ac', false);
+    add_replacement('ba', 'ab', false);
 })
