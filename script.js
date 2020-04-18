@@ -57,7 +57,7 @@ $('#navModal').popover({
     placement: 'bottom',
     title: 'Навигация',
     content: function() {
-        return "<ul><li><a href='#definitions'>Определения</a></li><a href='#examples'>Примеры</a></li><li><a href='#manual'>Как пользоваться</a></li></ul>";
+        return "<ul><li><a href='#definitions'>Определения</a></li><a href='#examples'>Примеры</a></li><li class='hide-on-mobile'><a href='#manual'>Как пользоваться</a></li></ul>";
     }
 });
 $("#settings").on("click", function() { $("#settingsModal").modal(); });

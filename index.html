@@ -15,42 +15,40 @@
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-4 bd-right">
-                    <div class="col-6 offset-3 list-title" data-toggle="tooltip" title="Общий вид подстановки">
+                <div class="col-5 col-md-4 bd-right">
+                    <div class="col-lg-6 col-9 offset-lg-3 offset-2 list-title" data-toggle="tooltip" title="Общий вид подстановки">
                         P &rightarrow; &lt; . &gt; Q
                     </div>
                     <div class="row list">
-                        <div class="col-1">
-                            <svg width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886" />
-                            </svg>
+                        <div class="col-1" style="font-size:3rem;">
+                            {
                         </div>
                         <div class="col-10">
                             <ul id="list-rep"></ul>
                         </div>
                     </div>
                     <div class="row bd-top">
-                        <div class="col-5">
+                        <div class="col-md-5 col-10">
                             <input type='text' id='P' class="form-control" data-toggle="tooltip" title="Подcтрока поиска"> </div>
                         <div class="col-1">
                             &rightarrow;
                         </div>
                         <input type="checkbox" id="flag" data-toggle="tooltip" title="Флаг конечной подстановки">
-                        <div class="col-5">
+
+                        <div class="col-md-5 col-10">
                             <input type="text" id="Q" class="form-control" data-toggle="tooltip" title="Подcтрока замены">
                         </div>
 
                     </div>
-                    <div class="offset-2">
+                    <div class="offset-md-2">
                         <button id="btn-append" class="btn btn-dark">Добавить</button>
                         <button id="btn-removeAll" class="btn btn-dark">Очистить</button>
                     </div>
 
                 </div>
-                <div class="col-8">
+                <div class="col-md-8 col-7">
                     <div class="row">
-                        <div class="offset-11">
+                        <div class="offset-md-11 offset-10">
                             <span id="information" data-toggle="tooltip" title="справка">
                                 <svg class="bi bi-question-circle" width="1em" height="1em" viewBox="0 0 16 16"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +74,6 @@
                     </div>
                     <div class="row justify-content-end bd-bottom">
                         <textarea id="string" class="form-control" placeholder="Строка для применения алгоритма..."></textarea>
-
                         <button id="btn-act" class="btn btn-dark col-auto">Выполнить</button>
                     </div>
                     <div id="answer">
@@ -167,7 +164,7 @@
                     </p>
                     <h4 id="examples">Примеры</h4>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-md-4 col-8">
                             <p>Вычисление частного при делении на 2 в виде: частное#остаток(для &Sigma; = {1, #}) &lbrace;</p>
                             <ul>
 
@@ -178,7 +175,7 @@
                             </ul>
                             <button type="button" id="try-it1" class="btn btn-dark" data-dismiss="modal">Попробовать</button>
                         </div>
-                        <div class="col-4">
+                        <div class="col-md-4 col-8">
                             <p>Добавление всех символов входного слова(для &Sigma; = {a, b}) &lbrace;</p>
                             <ul>
                                 <li>*a &rightarrow; aa*</li>
@@ -188,7 +185,7 @@
                             </ul>
                             <button type="button" id="try-it2" class="btn btn-dark" data-dismiss="modal">Попробовать</button>
                         </div>
-                        <div class="col-4">
+                        <div class="col-md-4 col-8">
                             <p>Сортировка символов входного(для &Sigma; = {a, b, c}) &lbrace;</p>
                             <ul>
 
@@ -199,8 +196,8 @@
                             <button type="button" id="try-it3" class="btn btn-dark" data-dismiss="modal">Попробовать</button>
                         </div>
                     </div>
-                    <h4 id="manual">Как пользоваться</h4>
-                    <img src="alg_gif.gif" width="720">
+                    <h4 id="manual" class="hide-on-mobile">Как пользоваться</h4>
+                    <img src="alg_gif.gif" width="720" class="hide-on-mobile">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Понятно!</button>
