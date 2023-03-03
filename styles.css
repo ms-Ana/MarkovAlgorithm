@@ -25,7 +25,7 @@ html {
     border-right: 1px dashed black;
     padding: 5px;
 }
-.li{
+li{
     overflow-wrap: break-word;
 }
 
