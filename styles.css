@@ -25,6 +25,9 @@ html {
     border-right: 1px dashed black;
     padding: 5px;
 }
+.li{
+    overflow-wrap: break-word;
+}
 
 .bd-top {
     border-top: 1px dashed black;
@@ -77,7 +80,10 @@ ul {
 .hide-on-mobile {
     display: block;
 }
-
+#answer
+{
+    overflow-wrap: break-word;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .hide-on-mobile {
         display: none;
